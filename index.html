@@ -1,11 +1,29 @@
+<!DOCTYPE html>
 <html>
     <head>
         <title>Test Git</title>
-        <link href="style.css" rel="stylesheet" type="text/css">
+        <link href="style.css" rel="stylesheet" type="text/css"/>
+        <meta charset="utf-8"/>
     </head>
 
     <body>
-        <h1>This is a test!</h1>
-        Login form
+        <h1>This is a mega drop down menu!</h1>
+        <div class='dropdown'>
+            <button onclick="dropdown1()" class='drop-button'>Dropdown!</button>
+            <div id='myDropdown1' class='drop-content'>
+                <p>Item 1</p>
+                <p>Item 2</p>
+                <p>Item 3</p>
+            </div>
+        </div>
+        <div class='dropdown'>
+            <button onmouseenter="dropdown2()" class='drop-button'>Dropdown!</button>
+            <div id='myDropdown2' class='drop-content'>
+                <p>Item 4</p>
+                <p>Item 5</p>
+                <p>Item 6</p>
+            </div>
+        </div>
     </body>
+    <script src="app.js"></script>
 </html>
