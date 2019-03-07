@@ -11,6 +11,11 @@ const showElements = id => {
 }
 
 const hideAllDropdowns = () => {
+  buttons.forEach(button => {
+    if(button.classList.contains('hover')){
+      button.classList.remove('hover');
+    }
+  })
   const dropdowns = document.querySelectorAll('.drop-content');
     dropdowns.forEach(dropdown => {
       if(dropdown.classList.contains('show')){
@@ -23,7 +28,11 @@ const buttons = document.querySelectorAll('.drop-button');
 buttons.forEach(button => {
   button.addEventListener('mouseenter', function(){
     showElements(button.id);
+    if(!button.classList.contains('.hover')){
+      button.classList.toggle('hover');
+    }
   });
+  
 })
 
 
