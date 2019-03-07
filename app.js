@@ -1,7 +1,8 @@
 // specify targets i.e. the content of the dropdown buttons
 const targets = {
   first: 'dropdown1',
-  second: 'dropdown2'
+  second: 'dropdown2',
+  third: 'dropdown3'
 }
 
 const showElements = id => {
@@ -15,7 +16,7 @@ const hideAllDropdowns = () => {
     if(button.classList.contains('hover')){
       button.classList.remove('hover');
     }
-  })
+  });
   const dropdowns = document.querySelectorAll('.drop-content');
     dropdowns.forEach(dropdown => {
       if(dropdown.classList.contains('show')){
