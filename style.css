@@ -1,22 +1,29 @@
 * {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Merriweather', sans-serif;
+}
+
+body {
+    text-align: center;
 }
 
 h1 {
-    background-color: skyblue;
+    font-family: 'Oswald', sans-serif;
+    font-size: 4em;
     color: black;
 }
 
 .drop-button {
     background-color: rgba(255, 176, 127, 0.5);
     color: black;
-    padding: 1.5rem;
-    font-size: 1.5rem;
+    padding: 1em;
+    font-size: 1.5em;
     border: none;
     cursor: pointer;
 }
 
 .drop-button:hover, .drop-button:focus {
+    position: relative;
+    bottom: 2px;
     background-color: rgba(255, 176, 127, 0.8);
 }
 

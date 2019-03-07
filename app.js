@@ -1,22 +1,37 @@
-/* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
-function dropdown1() {
-    document.querySelector('#myDropdown1').classList.toggle('show');
+// specify targets i.e. the content of the dropdown buttons
+const targets = {
+  first: 'dropdown1',
+  second: 'dropdown2'
 }
-  
-function dropdown2() {
-    document.querySelector('#myDropdown2').classList.toggle('show');
+
+const showElements = id => {
+  hideAllDropdowns();
+  const target = targets[id];
+  document.querySelector('#'.concat(target)).classList.toggle('show');
 }
-  // Close the dropdown menu if the user clicks outside of it
-  window.onclick = function(event) {
-    if (!event.target.matches('.drop-button')) {
-      var dropdowns = document.getElementsByClassName("drop-content");
-      var i;
-      for (i = 0; i < dropdowns.length; i++) {
-        var openDropdown = dropdowns[i];
-        if (openDropdown.classList.contains('show')) {
-          openDropdown.classList.remove('show');
-        }
+
+const hideAllDropdowns = () => {
+  const dropdowns = document.querySelectorAll('.drop-content');
+    dropdowns.forEach(dropdown => {
+      if(dropdown.classList.contains('show')){
+        dropdown.classList.remove('show');
       }
-    }
-  } 
+    });
+}
+
+const buttons = document.querySelectorAll('.drop-button');
+buttons.forEach(button => {
+  button.addEventListener('mouseenter', function(){
+    showElements(button.id);
+  });
+})
+
+
+// Close the dropdown menu if the user clicks outside of it
+
+window.onclick = function(event) {
+  if (!event.target.matches('.drop-button')) {
+    hideAllDropdowns();
+  }
+} 
+
