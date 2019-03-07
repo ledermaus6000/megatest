@@ -2,8 +2,23 @@
     font-family: 'Merriweather', sans-serif;
 }
 
-body {
-    text-align: center;
+.wrapper {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    /*
+    grid-column-gap: 1em;
+    grid-row-gap: 1em;
+    */
+    grid-gap: 1em;
+}
+
+.wrapper div {
+    background-color: #eee;
+    padding: 1em;
+}
+
+.wrapper div:nth-child(odd){
+    background-color: #ddd;
 }
 
 h1 {
@@ -27,15 +42,19 @@ h1 {
     background-color: rgba(226, 224, 223, 0.8);
     width: 9em;
 }
-/*
-.drop-button:hover, .drop-button:focus {
-    background-color: rgba(226, 224, 223, 0.8);
-    width: 9em;
-}*/
+
+.container {
+    position: relative;
+}
+
+.container p {
+    display: inline-block;
+}
 
 .dropdown {
     position: relative;
     display: inline-block;
+    margin-bottom: 15em;
 }
 
 .drop-content {
